@@ -32,13 +32,9 @@ namespace DcmParserLib.Parsers
 
             if (string.Compare(typeString, "Telemetry", StringComparison.InvariantCultureIgnoreCase) == 0 ||
                 string.Compare(typeString, "Property", StringComparison.InvariantCultureIgnoreCase) == 0)
-            {
                 telemetry.Type = typeString;
-            }
             else
-            {
-                throw new InvalidOperationException($"Unrecognized telemetry type '{(string)jo["@type"]}'");
-            }
+                throw new InvalidOperationException($"Unrecognized telemetry type '{(string) jo["@type"]}'");
 
             return telemetry;
         }

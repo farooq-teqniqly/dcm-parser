@@ -33,6 +33,29 @@ namespace DcmParserLibTests.Parsers
         }
 
         [Fact]
+        public void Parses_Property_Json()
+        {
+            // Arrange
+            var json = @"{
+	                ""@type"": ""Property"",
+	                ""displayName"": ""Opc UA Address"",
+	                ""description"": ""Description Text"",
+	                ""name"": ""opcUaAddress"",
+	                ""schema"": ""string"",
+	                ""writable"": true
+                }";
+
+            // Act
+            var telemetry = new TelemetryJsonParser().Parse(JObject.Parse(json));
+
+            // Assert
+            telemetry.DisplayName.Should().Be("Opc UA Address");
+            telemetry.Type.Should().Be("Property");
+            telemetry.Comment.Should().BeNullOrWhiteSpace();
+            telemetry.Name.Should().Be("opcUaAddress");
+        }
+
+        [Fact]
         public void Parses_State_Json()
         {
             // Arrange
@@ -77,29 +100,6 @@ namespace DcmParserLibTests.Parsers
             telemetry.Type.Should().Be("Telemetry");
             telemetry.Comment.Should().Be("[type=sensorx.telemetry,version=1]");
             telemetry.Name.Should().Be("Telemetry Name");
-        }
-
-        [Fact]
-        public void Parses_Property_Json()
-        {
-            // Arrange
-            var json = @"{
-	                ""@type"": ""Property"",
-	                ""displayName"": ""Opc UA Address"",
-	                ""description"": ""Description Text"",
-	                ""name"": ""opcUaAddress"",
-	                ""schema"": ""string"",
-	                ""writable"": true
-                }";
-
-            // Act
-            var telemetry = new TelemetryJsonParser().Parse(JObject.Parse(json));
-
-            // Assert
-            telemetry.DisplayName.Should().Be("Opc UA Address");
-            telemetry.Type.Should().Be("Property");
-            telemetry.Comment.Should().BeNullOrWhiteSpace();
-            telemetry.Name.Should().Be("opcUaAddress");
         }
 
         [Fact]
