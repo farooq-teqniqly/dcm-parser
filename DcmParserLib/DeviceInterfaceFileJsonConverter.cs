@@ -45,7 +45,7 @@ namespace DcmParserLib
                     var field = new Field
                     {
                         DisplayName = (string) fieldJson["displayName"],
-                        DisplayUnit = (string) fieldJson["displayUnit"],
+                        DisplayUnit = (string) fieldJson["displayUnit"]
                         //Schema = new Schema {Type = (string) fieldJson["schema"]}
                     };
 

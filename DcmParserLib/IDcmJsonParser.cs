@@ -1,6 +1,4 @@
-﻿using Newtonsoft.Json.Linq;
-
-namespace DcmParserLib
+﻿namespace DcmParserLib
 {
     public interface IDcmJsonParser<out T> where T : class
     {

@@ -15,9 +15,9 @@ namespace DcmParserLibTests
                              ""name"":""dateTime"",
                              ""displayName"":""Date time""
                           }";
-            
+
             // Act
-            Field field = new FieldJsonParser().Parse(JObject.Parse(json));
+            var field = new FieldJsonParser().Parse(JObject.Parse(json));
 
             // Assert
             field.DisplayName.Should().Be("Date time");

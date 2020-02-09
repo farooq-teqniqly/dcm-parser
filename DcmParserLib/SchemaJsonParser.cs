@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Newtonsoft.Json.Linq;
 
 namespace DcmParserLib
@@ -11,42 +7,39 @@ namespace DcmParserLib
     {
         public Schema Parse(object obj)
         {
-            if (obj is JObject jo)
+            switch (obj)
             {
-                var schemaObj = jo["schema"];
-
-                if (schemaObj.Type == JTokenType.String)
+                case JObject jo:
                 {
-                    return new Schema
+                    var schemaObj = jo["schema"];
+
+                    if (schemaObj.Type == JTokenType.String)
+                        return new Schema
+                        {
+                            Type = (string) schemaObj
+                        };
+
+                    var arraySchema = new Schema
                     {
-                        Type = (string)schemaObj
+                        Type = (string) schemaObj["@type"]
                     };
+
+                    var arrayFields = schemaObj["elementSchema"]["fields"];
+                    var fieldParser = new FieldJsonParser();
+
+                    foreach (var arrayField in arrayFields)
+                    {
+                        var field = fieldParser.Parse(arrayField);
+                        arraySchema.Fields.Add(field);
+                    }
+
+                    return arraySchema;
                 }
-
-                var arraySchema = new Schema
-                {
-                    Type = (string)schemaObj["@type"]
-                };
-
-                var arrayFields = schemaObj["elementSchema"]["fields"];
-                var fieldParser = new FieldJsonParser();
-
-                foreach (var arrayField in arrayFields)
-                {
-                    var field = fieldParser.Parse(arrayField);
-                    arraySchema.Fields.Add(field);
-                }
-
-                return arraySchema;
-
+                case JValue jv:
+                    return new Schema {Type = (string) jv.Value};
+                default:
+                    throw new InvalidOperationException();
             }
-
-            if (obj is JValue jv)
-            {
-                return new Schema { Type = (string)jv.Value };
-            }
-            
-            throw new InvalidOperationException();
         }
     }
 }

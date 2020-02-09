@@ -7,7 +7,7 @@ namespace DcmParserLib
     {
         public Telemetry Parse(object obj)
         {
-            var jo = (JObject)obj;
+            var jo = (JObject) obj;
             var telemetry = new Telemetry
             {
                 Comment = (string) jo["comment"],
@@ -19,14 +19,10 @@ namespace DcmParserLib
             {
                 if (string.Compare((string) type[1], "SemanticType/Event",
                         StringComparison.InvariantCultureIgnoreCase) == 0)
-                {
                     telemetry.Type = "Event";
-                }
-                else if (string.Compare((string)type[1], "SemanticType/State",
-                                StringComparison.InvariantCultureIgnoreCase) == 0)
-                {
+                else if (string.Compare((string) type[1], "SemanticType/State",
+                             StringComparison.InvariantCultureIgnoreCase) == 0)
                     telemetry.Type = "State";
-                }
             }
             else
             {

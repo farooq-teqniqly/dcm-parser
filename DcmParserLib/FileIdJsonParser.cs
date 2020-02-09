@@ -1,6 +1,4 @@
-﻿using System.Runtime.InteropServices;
-using System.Runtime.InteropServices.ComTypes;
-using Newtonsoft.Json.Linq;
+﻿using Newtonsoft.Json.Linq;
 
 namespace DcmParserLib
 {
@@ -22,13 +20,13 @@ namespace DcmParserLib
     {
         public Field Parse(object obj)
         {
-            var jo = (JObject)obj;
+            var jo = (JObject) obj;
 
             var field = new Field
             {
                 Name = (string) jo["name"],
                 DisplayName = (string) jo["displayName"],
-                DisplayUnit = (string)jo["displayUnit"]
+                DisplayUnit = (string) jo["displayUnit"]
             };
 
             if (jo["schema"] == null) return field;
