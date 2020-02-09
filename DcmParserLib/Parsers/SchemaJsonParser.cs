@@ -42,21 +42,40 @@ namespace DcmParserLib.Parsers
                         return arraySchema;
                     }
 
-                    var objectSchema = new Schema
+                    if (string.Compare("Object", typeString, StringComparison.InvariantCultureIgnoreCase) == 0)
                     {
-                        Type = typeString
-                    };
+                        var objectSchema = new Schema
+                        {
+                            Type = typeString
+                        };
 
-                    var objectFields = schemaObj["fields"];
+                        var objectFields = schemaObj["fields"];
 
-                    foreach (var objectField in objectFields)
-                    {
-                        var field = fieldParser.Parse(objectField);
-                        objectSchema.Fields.Add(field);
+                        foreach (var objectField in objectFields)
+                        {
+                            var field = fieldParser.Parse(objectField);
+                            objectSchema.Fields.Add(field);
+                        }
+
+                        return objectSchema;
                     }
 
-                    return objectSchema;
-                }
+                    if (string.Compare("Property", typeString, StringComparison.InvariantCultureIgnoreCase) == 0)
+                    {
+                        var propertySchema = new Schema
+                        {
+                            Type = typeString
+                        };
+
+                        propertySchema.Fields.Add(new Field
+                        {
+                            DisplayName = schemaObj["displayName"],
+                            DisplayUnit = 
+                        });
+                    }
+
+
+                    }
                 case JValue jv:
                     return new Schema {Type = (string) jv.Value};
                 default:
