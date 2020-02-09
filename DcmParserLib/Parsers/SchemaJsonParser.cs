@@ -20,21 +20,42 @@ namespace DcmParserLib.Parsers
                             Type = (string) schemaObj
                         };
 
-                    var arraySchema = new Schema
-                    {
-                        Type = (string) schemaObj["@type"]
-                    };
-
-                    var arrayFields = schemaObj["elementSchema"]["fields"];
+                    var typeString = (string) schemaObj["@type"];
                     var fieldParser = new FieldJsonParser();
 
-                    foreach (var arrayField in arrayFields)
+                    if (string.Compare("Array", typeString, StringComparison.InvariantCultureIgnoreCase) == 0)
                     {
-                        var field = fieldParser.Parse(arrayField);
-                        arraySchema.Fields.Add(field);
+                        var arraySchema = new Schema
+                        {
+                            Type = (string) schemaObj["@type"]
+                        };
+
+                        var arrayFields = schemaObj["elementSchema"]["fields"];
+
+
+                        foreach (var arrayField in arrayFields)
+                        {
+                            var field = fieldParser.Parse(arrayField);
+                            arraySchema.Fields.Add(field);
+                        }
+
+                        return arraySchema;
                     }
 
-                    return arraySchema;
+                    var objectSchema = new Schema
+                    {
+                        Type = typeString
+                    };
+
+                    var objectFields = schemaObj["fields"];
+
+                    foreach (var objectField in objectFields)
+                    {
+                        var field = fieldParser.Parse(objectField);
+                        objectSchema.Fields.Add(field);
+                    }
+
+                    return objectSchema;
                 }
                 case JValue jv:
                     return new Schema {Type = (string) jv.Value};

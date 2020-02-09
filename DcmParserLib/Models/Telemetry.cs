@@ -2,11 +2,6 @@
 {
     public class Telemetry
     {
-        public Telemetry()
-        {
-            Schema = new Schema();
-        }
-
         public string Type { get; set; }
 
         public string Name { get; set; }
