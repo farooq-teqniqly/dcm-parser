@@ -24,14 +24,16 @@ namespace DcmParserLib.Parsers
                 else if (string.Compare((string) type[1], "SemanticType/State",
                              StringComparison.InvariantCultureIgnoreCase) == 0)
                     telemetry.Type = "State";
+
+                return telemetry;
             }
-            else if (string.Compare((string)jo["@type"], "Telemetry", StringComparison.InvariantCultureIgnoreCase) == 0)
+
+            var typeString = (string) jo["@type"];
+
+            if (string.Compare(typeString, "Telemetry", StringComparison.InvariantCultureIgnoreCase) == 0 ||
+                string.Compare(typeString, "Property", StringComparison.InvariantCultureIgnoreCase) == 0)
             {
-                telemetry.Type = "Telemetry";
-            }
-            else if (string.Compare((string)jo["@type"], "Property", StringComparison.InvariantCultureIgnoreCase) == 0)
-            {
-                telemetry.Type = "Property";
+                telemetry.Type = typeString;
             }
             else
             {
