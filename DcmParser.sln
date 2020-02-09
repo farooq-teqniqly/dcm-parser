@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29613.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DcmParserLib", "DcmParserLib\DcmParserLib.csproj", "{BDD23FA6-8FFA-4C6D-B184-F566A502AAC3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DcmParserLibTests", "DcmParserLibTests\DcmParserLibTests.csproj", "{51EF39F5-57AC-4057-879D-DB8CC31102CD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BDD23FA6-8FFA-4C6D-B184-F566A502AAC3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BDD23FA6-8FFA-4C6D-B184-F566A502AAC3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BDD23FA6-8FFA-4C6D-B184-F566A502AAC3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BDD23FA6-8FFA-4C6D-B184-F566A502AAC3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{51EF39F5-57AC-4057-879D-DB8CC31102CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{51EF39F5-57AC-4057-879D-DB8CC31102CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{51EF39F5-57AC-4057-879D-DB8CC31102CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{51EF39F5-57AC-4057-879D-DB8CC31102CD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0AEC9D40-6CDE-4957-A2C2-499A8F0181CC}
+	EndGlobalSection
+EndGlobal
