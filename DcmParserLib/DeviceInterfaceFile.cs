@@ -38,15 +38,10 @@ namespace DcmParserLib
 
     public class Field
     {
-        public Field()
-        {
-            Schema = new Schema();
-        }
-
         public string Name { get; set; }
         public string DisplayName { get; set; }
         public string DisplayUnit { get; set; }
-        public Schema Schema { get; set; }
+        public string Schema { get; set; }
     }
 
     public class Schema
