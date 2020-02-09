@@ -25,9 +25,17 @@ namespace DcmParserLib.Parsers
                              StringComparison.InvariantCultureIgnoreCase) == 0)
                     telemetry.Type = "State";
             }
+            else if (string.Compare((string)jo["@type"], "Telemetry", StringComparison.InvariantCultureIgnoreCase) == 0)
+            {
+                telemetry.Type = "Telemetry";
+            }
+            else if (string.Compare((string)jo["@type"], "Property", StringComparison.InvariantCultureIgnoreCase) == 0)
+            {
+                telemetry.Type = "Property";
+            }
             else
             {
-                telemetry.Type = (string) jo["@type"];
+                throw new InvalidOperationException($"Unrecognized telemetry type '{(string)jo["@type"]}'");
             }
 
             return telemetry;
