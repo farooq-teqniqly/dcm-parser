@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace DcmParserLib
+namespace DcmParserLib.Models
 {
     public class Schema
     {

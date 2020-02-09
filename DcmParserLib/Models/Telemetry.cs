@@ -1,4 +1,4 @@
-﻿namespace DcmParserLib
+﻿namespace DcmParserLib.Models
 {
     public class Telemetry
     {

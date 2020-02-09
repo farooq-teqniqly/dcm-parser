@@ -1,9 +1,9 @@
-using DcmParserLib;
+using DcmParserLib.Parsers;
 using FluentAssertions;
 using Newtonsoft.Json.Linq;
 using Xunit;
 
-namespace DcmParserLibTests
+namespace DcmParserLibTests.Parsers
 {
     public class FieldJsonParserTests
     {

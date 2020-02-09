@@ -1,6 +1,7 @@
-﻿using Newtonsoft.Json.Linq;
+﻿using DcmParserLib.Models;
+using Newtonsoft.Json.Linq;
 
-namespace DcmParserLib
+namespace DcmParserLib.Parsers
 {
     public class FileIdJsonParser : IDcmJsonParser<FileId>
     {

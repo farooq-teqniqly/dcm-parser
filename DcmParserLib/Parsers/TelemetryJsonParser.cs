@@ -1,7 +1,8 @@
 ﻿using System;
+using DcmParserLib.Models;
 using Newtonsoft.Json.Linq;
 
-namespace DcmParserLib
+namespace DcmParserLib.Parsers
 {
     public class TelemetryJsonParser : IDcmJsonParser<Telemetry>
     {

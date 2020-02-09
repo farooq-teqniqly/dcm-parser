@@ -1,4 +1,4 @@
-﻿namespace DcmParserLib
+﻿namespace DcmParserLib.Parsers
 {
     public interface IDcmJsonParser<out T> where T : class
     {
