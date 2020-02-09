@@ -41,7 +41,7 @@ namespace DcmParserLib
         public string Name { get; set; }
         public string DisplayName { get; set; }
         public string DisplayUnit { get; set; }
-        public string Schema { get; set; }
+        public Schema Schema { get; set; }
     }
 
     public class Schema

@@ -5,16 +5,17 @@ namespace DcmParserLib
 {
     public class TelemetryJsonParser : IDcmJsonParser<Telemetry>
     {
-        public Telemetry Parse(JObject source)
+        public Telemetry Parse(object obj)
         {
+            var jo = (JObject)obj;
             var telemetry = new Telemetry
             {
-                Comment = (string) source["comment"],
-                DisplayName = (string) source["displayName"],
-                Name = (string) source["name"]
+                Comment = (string) jo["comment"],
+                DisplayName = (string) jo["displayName"],
+                Name = (string) jo["name"]
             };
 
-            if (source["@type"] is JArray type)
+            if (jo["@type"] is JArray type)
             {
                 if (string.Compare((string) type[1], "SemanticType/Event",
                         StringComparison.InvariantCultureIgnoreCase) == 0)
@@ -29,7 +30,7 @@ namespace DcmParserLib
             }
             else
             {
-                telemetry.Type = (string) source["@type"];
+                telemetry.Type = (string) jo["@type"];
             }
 
             return telemetry;

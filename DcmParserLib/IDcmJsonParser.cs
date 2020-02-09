@@ -2,8 +2,8 @@
 
 namespace DcmParserLib
 {
-    public interface IDcmJsonParser<T> where T : class
+    public interface IDcmJsonParser<out T> where T : class
     {
-        T Parse(JObject source);
+        T Parse(object jo);
     }
 }

@@ -8,13 +8,12 @@ namespace DcmParserLibTests
     public class FieldJsonParserTests
     {
         [Fact]
-        public void Parses_Simple_Field()
+        public void Parses_Field()
         {
             // Arrange
             var json = @"{
                              ""name"":""dateTime"",
-                             ""displayName"":""Date time"",
-                             ""schema"":""dateTime schema""
+                             ""displayName"":""Date time""
                           }";
             
             // Act
@@ -23,18 +22,16 @@ namespace DcmParserLibTests
             // Assert
             field.DisplayName.Should().Be("Date time");
             field.Name.Should().Be("dateTime");
-            field.Schema.Should().Be("dateTime schema");
             field.DisplayUnit.Should().BeNullOrWhiteSpace();
         }
 
         [Fact]
-        public void Parses_Field_With_Units()
+        public void Parses_Field_With_Unit()
         {
             // Arrange
             var json = @"{
                              ""name"":""dateTime"",
                              ""displayName"":""Date time"",
-                             ""schema"":""dateTime schema"",
                              ""displayUnit"":""units"",
 
                           }";
@@ -45,7 +42,6 @@ namespace DcmParserLibTests
             // Assert
             field.DisplayName.Should().Be("Date time");
             field.Name.Should().Be("dateTime");
-            field.Schema.Should().Be("dateTime schema");
             field.DisplayUnit.Should().Be("units");
         }
     }
