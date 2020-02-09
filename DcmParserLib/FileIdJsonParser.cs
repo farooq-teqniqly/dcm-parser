@@ -2,7 +2,7 @@
 
 namespace DcmParserLib
 {
-    public class FileIdJsonParser
+    public class FileIdJsonParser : IDcmJsonParser<FileId>
     {
         public FileId Parse(JObject source)
         {
