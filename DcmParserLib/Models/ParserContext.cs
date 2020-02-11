@@ -13,5 +13,12 @@ namespace DcmParserLib.Models
         public JObject Source { get; set; }
 
         public FileNode FileNode { get; set; }
+
+        public IList<ContentNode> ContentNodes { get; }
+
+        public ParserContext()
+        {
+            ContentNodes = new List<ContentNode>();
+        }
     }
 }
