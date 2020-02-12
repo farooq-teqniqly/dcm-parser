@@ -42,32 +42,37 @@ namespace DcmParserLib.Parsers
 
                 var contentNode = contentNodeFactory.CreateContentNode(contentNodeContext);
 
-                // Parse content schema if not a property. A property's schema is added by the ContentNodeFactory.
-                if (contentNode is PropertyContentNode) continue;
                 if (contentNode is InvalidContentNode) continue;
 
+                // Parse schema if it isn't a simple schema in which case it was parsed by the ContentNodeFactory.
 
-                var schemaNodeContext = new ParserContext
+                if (tokenContent["schema"].Type != JTokenType.String)
                 {
-                    Source = JObject.FromObject(tokenContent["schema"])
-                };
+                    var schemaNodeContext = new ParserContext
+                    {
+                        Source = JObject.FromObject(tokenContent["schema"])
+                    };
 
-                var schemaNode = schemaNodeFactory.CreateSchemaNode(schemaNodeContext);
+                    var schemaNode = schemaNodeFactory.CreateSchemaNode(schemaNodeContext);
 
-                if (schemaNode is InvalidSchemaNode) continue;
+                    if (schemaNode is SimpleSchemaNode) continue;
+                    if (schemaNode is InvalidSchemaNode) continue;
 
-                // Parse schema fields
-                var fieldNodesContext = new ParserContext
-                {
-                    Source = JObject.FromObject(tokenContent["schema"])
-                };
+                    // Parse schema fields
+                    var fieldNodesContext = new ParserContext
+                    {
+                        Source = JObject.FromObject(tokenContent["schema"])
+                    };
 
-                fieldNodesContext.Data.Add("SchemaType", schemaNode.GetType());
+                    fieldNodesContext.Data.Add("SchemaType", schemaNode.GetType());
 
-                var fieldNodes = fieldNodesFactory.CreateFieldNodes(fieldNodesContext);
+                    var fieldNodes = fieldNodesFactory.CreateFieldNodes(fieldNodesContext);
 
-                schemaNode.Fields.AddRange(fieldNodes);
-                contentNode.Schema = schemaNode;
+                    schemaNode.Fields.AddRange(fieldNodes);
+                    contentNode.Schema = schemaNode;
+                }
+
+
                 deviceInterfaceFileNode.Contents.Add(contentNode);
             }
 

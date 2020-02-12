@@ -1,0 +1,161 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="DcmParserLib.Abstractions.ContentNode">
+    <Position X="7" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAEAAAAAAAAAAAAAAQEAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Abstractions\ContentNode.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DcmParserLib.Abstractions.FieldNode">
+    <Position X="19" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAAAAAAAAAAAAAAAQEAAAAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>Abstractions\FieldNode.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DcmParserLib.Abstractions.FileNode">
+    <Position X="2.25" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAA=</HashCode>
+      <FileName>Abstractions\FileNode.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DcmParserLib.Abstractions.SchemaNode">
+    <Position X="5.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAA=</HashCode>
+      <FileName>Abstractions\SchemaNode.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DcmParserLib.Factories.ContentNodeFactory" BaseTypeListCollapsed="true">
+    <Position X="14" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>Factories\ContentNodeFactory.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="DcmParserLib.Factories.FieldNodesFactory" BaseTypeListCollapsed="true">
+    <Position X="14" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Factories\FieldNodesFactory.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="DcmParserLib.Factories.SchemaNodeFactory" BaseTypeListCollapsed="true">
+    <Position X="19" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Factories\SchemaNodeFactory.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="DcmParserLib.Models.ArraySchemaNode">
+    <Position X="2.5" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\ArraySchemaNode.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DcmParserLib.Models.DeviceInterfaceFileNode">
+    <Position X="2.25" Y="11.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\DeviceInterfaceFileNode.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DcmParserLib.Models.EventContentNode">
+    <Position X="7" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\EventContentNode.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DcmParserLib.Models.InvalidContentNode">
+    <Position X="11.5" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\InvalidContentNode.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DcmParserLib.Models.InvalidSchemaNode">
+    <Position X="4.75" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\InvalidSchemaNode.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DcmParserLib.Models.ObjectSchemaNode">
+    <Position X="7" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\ObjectSchemaNode.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DcmParserLib.Models.PropertyContentNode">
+    <Position X="9.25" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\PropertyContentNode.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DcmParserLib.Models.SimpleSchemaNode">
+    <Position X="9.25" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\SimpleSchemaNode.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DcmParserLib.Models.StateContentNode">
+    <Position X="2.5" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\StateContentNode.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DcmParserLib.Models.TelemetryContentNode">
+    <Position X="4.75" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\TelemetryContentNode.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DcmParserLib.Parsers.DeviceInterfaceFileParser">
+    <Position X="15.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgiAAAAAAAAAAAAAAAAAAAAAAAAAAAIABAAAAAAAAA=</HashCode>
+      <FileName>Parsers\DeviceInterfaceFileParser.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DcmParserLib.Parsers.ParserContext">
+    <Position X="15.75" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAgAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAA=</HashCode>
+      <FileName>Parsers\ParserContext.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="DcmParserLib.Abstractions.IContentNodeFactory">
+    <Position X="14" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>Abstractions\IContentNodeFactory.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="DcmParserLib.Abstractions.IFieldNodesFactory">
+    <Position X="15.75" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Abstractions\IFieldNodesFactory.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="DcmParserLib.Abstractions.ISchemaNodeFactory">
+    <Position X="18.75" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Abstractions\ISchemaNodeFactory.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

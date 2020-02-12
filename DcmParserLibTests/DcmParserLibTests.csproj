@@ -7,6 +7,19 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="TestFiles\ATC\atc.chainHealth.interface.json" />
+    <None Remove="TestFiles\ATC\atc.chillline.interface.json" />
+    <None Remove="TestFiles\ATC\atc.controller.interface.json" />
+    <None Remove="TestFiles\ATC\atc.dancers.interface.json" />
+    <None Remove="TestFiles\ATC\atc.motors.interface.json" />
+    <None Remove="TestFiles\ATC\atc.smartWeigher.interface.json" />
+    <None Remove="TestFiles\SensorX\sensorx.conveyor.interface.json" />
+    <None Remove="TestFiles\SensorX\sensorx.machine.interface.json" />
+    <None Remove="TestFiles\SensorX\sensorx.xrayGenerator.interface.json" />
+    <None Remove="TestFiles\SensorX\sensorx.xraySensor.interface.json" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="FluentAssertions" Version="5.10.0" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.2.0" />
     <PackageReference Include="xunit" Version="2.4.0" />
@@ -31,6 +44,42 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="TestFiles\SensorX\sensorx.conveyor.interface.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestFiles\SensorX\sensorx.machine.interface.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestFiles\SensorX\sensorx.xrayGenerator.interface.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestFiles\SensorX\sensorx.xraySensor.interface.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="TestFiles\ATC\atc.chainHealth.interface.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestFiles\ATC\atc.chillline.interface.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestFiles\ATC\atc.controller.interface.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestFiles\ATC\atc.dancers.interface.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestFiles\ATC\atc.motors.interface.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestFiles\ATC\atc.smartWeigher.interface.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
 </Project>

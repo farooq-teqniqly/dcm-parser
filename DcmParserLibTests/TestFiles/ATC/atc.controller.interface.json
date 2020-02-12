@@ -1,0 +1,88 @@
+{
+    "@id": "urn:marel:atc:controller:1",
+    "@type": "Interface",
+    "displayName": "Controller interface",
+    "contents": [
+        {
+            "@type": "Property",
+            "displayName": "Linestate Addresses",
+            "name": "lineStateAddresses",
+            "schema": {
+                "@type": "Object",
+                "fields": [
+                    {
+                        "name": "machineStatus",
+                        "schema": "integer"
+                    },
+                    {
+                        "name": "startButton",
+                        "schema": "integer"
+                    },
+                    {
+                        "name": "stopButton",
+                        "schema": "integer"
+                    },
+                    {
+                        "name": "resetButton",
+                        "schema": "integer"
+                    },
+                    {
+                        "name": "lineState",
+                        "schema": "integer"
+                    },
+                    {
+                        "name": "chainData",
+                        "schema": "integer"
+                    }
+                ]
+            }
+        },
+        {
+            "@type": [
+                "Telemetry",
+                "SemanticType/Marel/Event"
+            ],
+            "name": "atc_event",
+            "displayName": "Event",
+            "schema": {
+                "@type": "Object",
+                "fields": [
+                    {
+                        "name": "dateTime",
+                        "schema": "dateTime"
+                    },
+                    {
+                        "name": "name",
+                        "schema": "string"
+                    }
+                ]
+            }
+        },
+        {
+            "@type": [
+                "Telemetry",
+                "SemanticType/Marel/State"
+            ],
+            "name": "atc_controller_state",
+            "displayName": "State",
+            "schema": {
+                "@type": "Object",
+                "fields": [
+                    {
+                        "name": "dateTime",
+                        "schema": "dateTime"
+                    },
+                    {
+                        "name": "name",
+                        "schema": "string"
+                    },
+                    {
+                        "name": "value",
+                        "schema": "integer"
+                    }
+                ]
+            }
+        }
+    ],
+    "@context": "http://azureiot.com/v1/contexts/IoTModel.json"
+}

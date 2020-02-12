@@ -1,0 +1,37 @@
+{
+    "@id": "urn:marel:smartWeigher:1",
+    "@type": "Interface",
+    "displayName": "Smart Weigher",
+    "contents": [
+        {
+            "@type": "Telemetry",
+            "name": "atc_product",
+            "displayName": "Product",
+            "schema": {
+                "@type": "Array",
+                "elementSchema": {
+                    "@type": "Object",
+                    "fields": [
+                        {
+                            "name": "dateTime",
+                            "schema": "dateTime"
+                        },
+                        {
+                            "name": "shackle",
+                            "schema": "integer"
+                        },
+                        {
+                            "name": "present",
+                            "schema": "boolean"
+                        },
+                        {
+                            "name": "weight",
+                            "schema": "float"
+                        }
+                    ]
+                }
+            }
+        }
+    ],
+    "@context": "http://azureiot.com/v1/contexts/IoTModel.json"
+}

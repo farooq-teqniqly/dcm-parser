@@ -1,4 +1,5 @@
 ﻿using System.Linq;
+using DcmParserLib.Abstractions;
 using DcmParserLib.Factories;
 using DcmParserLib.Models;
 using DcmParserLib.Parsers;

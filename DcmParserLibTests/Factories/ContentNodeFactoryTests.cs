@@ -1,4 +1,6 @@
-﻿using DcmParserLib.Factories;
+﻿using System.Linq;
+using DcmParserLib.Abstractions;
+using DcmParserLib.Factories;
 using DcmParserLib.Models;
 using DcmParserLib.Parsers;
 using FluentAssertions;
@@ -74,11 +76,12 @@ namespace DcmParserLibTests.Factories
                 Source = JObject.Parse(@"{
                                             ""@type"": [
                                                 ""Telemetry"",
-                                                ""SemanticType/Event""
+                                                ""SemanticType/Marel/Event""
                                             ],
                                             ""name"": ""config"",
                                             ""displayName"": ""Configuration"",
                                             ""displayUnit"": ""JSON"",
+                                            ""schema"":""integer"",
                                             ""comment"": ""[type=sensorx.event,version=1]""
                                         }")
             };
@@ -91,6 +94,8 @@ namespace DcmParserLibTests.Factories
             node.DisplayName.Should().Be("Configuration");
             node.Name.Should().Be("config");
             node.Comment.Should().Be("[type=sensorx.event,version=1]");
+            node.Schema.Should().BeOfType<SimpleSchemaNode>();
+            ((SimpleSchemaNode) node.Schema).Name.Should().Be("integer");
         }
 
         [Fact]
@@ -103,10 +108,11 @@ namespace DcmParserLibTests.Factories
                 Source = JObject.Parse(@"{
                                         ""@type"": [
                                             ""Telemetry"",
-                                            ""SemanticType/State""
+                                            ""SemanticType/Marel/State""
                                         ],
                                         ""name"": ""plutoState"",
                                         ""displayName"": ""Pluto State"",
+                                        ""schema"":""integer"",
                                         ""comment"": ""[type=sensorx.state,version=1]""
                                     }")
             };
@@ -119,6 +125,8 @@ namespace DcmParserLibTests.Factories
             node.DisplayName.Should().Be("Pluto State");
             node.Name.Should().Be("plutoState");
             node.Comment.Should().Be("[type=sensorx.state,version=1]");
+            node.Schema.Should().BeOfType<SimpleSchemaNode>();
+            ((SimpleSchemaNode)node.Schema).Name.Should().Be("integer");
         }
     }
 }
