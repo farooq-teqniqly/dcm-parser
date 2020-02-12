@@ -13,9 +13,9 @@ namespace DcmParserLib.Parsers
         {
             Context.ContentNodes.Add(new StateContentNode
             {
-                DisplayName = (string)Context.Source["displayName"],
-                Name = (string)Context.Source["name"],
-                Comment = (string)Context.Source["comment"]
+                DisplayName = (string) Context.Source["displayName"],
+                Name = (string) Context.Source["name"],
+                Comment = (string) Context.Source["comment"]
             });
         }
     }

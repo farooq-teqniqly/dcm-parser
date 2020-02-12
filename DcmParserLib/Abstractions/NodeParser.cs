@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using DcmParserLib.Models;
-using Newtonsoft.Json.Linq;
+﻿using DcmParserLib.Models;
 
 namespace DcmParserLib.Abstractions
 {
-    public abstract class NodeParser: INodeParser
+    public abstract class NodeParser : INodeParser
     {
         protected ParserContext Context { get; }
 
@@ -16,6 +10,7 @@ namespace DcmParserLib.Abstractions
         {
             Context = context;
         }
+
         public abstract void Parse(IParseable parseable);
     }
 }

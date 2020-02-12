@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Linq;
 using DcmParserLib.Abstractions;
 using DcmParserLib.Models;
 using DcmParserLib.Parsers;
@@ -39,7 +35,7 @@ namespace DcmParserLibTests
             var json = Resources.DeviceInterfaceFileJson;
 
             // Act
-            var context = new ParserContext() { Source = JObject.Parse(json) };
+            var context = new ParserContext {Source = JObject.Parse(json)};
             var parser = new ContentNodeParser(context);
             parser.Parse();
 

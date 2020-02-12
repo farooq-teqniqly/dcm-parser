@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using DcmParserLib.Models;
 using DcmParserLib.Parsers;
 using Newtonsoft.Json.Linq;
@@ -31,25 +27,25 @@ namespace DcmParserLib.Abstractions
                     if (string.Compare("SemanticType/Event", semanticType,
                             StringComparison.InvariantCultureIgnoreCase) == 0)
                     {
-                        var childContext = new ParserContext { Source = JObject.FromObject(content) };
+                        var childContext = new ParserContext {Source = JObject.FromObject(content)};
                         var parser = new EventContentNodeParser(childContext);
                         parser.Parse(new EventContentNode());
-                        this.context.ContentNodes.AddRange(childContext.ContentNodes);
+                        context.ContentNodes.AddRange(childContext.ContentNodes);
                         continue;
                     }
 
                     if (string.Compare("SemanticType/State", semanticType,
                             StringComparison.InvariantCultureIgnoreCase) == 0)
                     {
-                        var childContext = new ParserContext { Source = JObject.FromObject(content) };
+                        var childContext = new ParserContext {Source = JObject.FromObject(content)};
                         var parser = new StateContentNodeParser(childContext);
                         parser.Parse(new StateContentNode());
-                        this.context.ContentNodes.AddRange(childContext.ContentNodes);
+                        context.ContentNodes.AddRange(childContext.ContentNodes);
                         continue;
                     }
                 }
 
-                var type = (string)content["@type"];
+                var type = (string) content["@type"];
 
                 if (string.Compare("Telemetry", type,
                         StringComparison.InvariantCultureIgnoreCase) == 0)
@@ -57,18 +53,17 @@ namespace DcmParserLib.Abstractions
                     var childContext = new ParserContext {Source = JObject.FromObject(content)};
                     var parser = new TelemetryContentNodeParser(childContext);
                     parser.Parse(new TelemetryContentNode());
-                    this.context.ContentNodes.AddRange(childContext.ContentNodes);
+                    context.ContentNodes.AddRange(childContext.ContentNodes);
                     continue;
                 }
 
                 if (string.Compare("Property", type,
                         StringComparison.InvariantCultureIgnoreCase) == 0)
                 {
-                    var childContext = new ParserContext { Source = JObject.FromObject(content) };
+                    var childContext = new ParserContext {Source = JObject.FromObject(content)};
                     var parser = new PropertyContentNodeParser(childContext);
                     parser.Parse(new PropertyContentNode());
-                    this.context.ContentNodes.AddRange(childContext.ContentNodes);
-                    continue;
+                    context.ContentNodes.AddRange(childContext.ContentNodes);
                 }
             }
         }

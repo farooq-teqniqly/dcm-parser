@@ -1,11 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using DcmParserLib.Abstractions;
+﻿using DcmParserLib.Abstractions;
 using DcmParserLib.Models;
-using Newtonsoft.Json.Linq;
 
 namespace DcmParserLib.Parsers
 {
@@ -19,9 +13,9 @@ namespace DcmParserLib.Parsers
         {
             Context.ContentNodes.Add(new TelemetryContentNode
             {
-                DisplayName = (string)Context.Source["displayName"],
-                Name = (string)Context.Source["name"],
-                Comment = (string)Context.Source["comment"]
+                DisplayName = (string) Context.Source["displayName"],
+                Name = (string) Context.Source["name"],
+                Comment = (string) Context.Source["comment"]
             });
         }
     }
