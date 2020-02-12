@@ -23,7 +23,7 @@ namespace DcmParserLib.Parsers
             this.fieldNodesFactory = fieldNodesFactory;
         }
 
-        public void Parse()
+        public DeviceInterfaceFileNode Parse()
         {
             // parse file info
             var deviceInterfaceFileNode = new DeviceInterfaceFileNode
@@ -44,6 +44,8 @@ namespace DcmParserLib.Parsers
 
                 // Parse content schema if not a property. A property's schema is added by the ContentNodeFactory.
                 if (contentNode is PropertyContentNode) continue;
+                if (contentNode is InvalidContentNode) continue;
+
 
                 var schemaNodeContext = new ParserContext
                 {
@@ -51,6 +53,8 @@ namespace DcmParserLib.Parsers
                 };
 
                 var schemaNode = schemaNodeFactory.CreateSchemaNode(schemaNodeContext);
+
+                if (schemaNode is InvalidSchemaNode) continue;
 
                 // Parse schema fields
                 var fieldNodesContext = new ParserContext
@@ -61,7 +65,13 @@ namespace DcmParserLib.Parsers
                 fieldNodesContext.Data.Add("SchemaType", schemaNode.GetType());
 
                 var fieldNodes = fieldNodesFactory.CreateFieldNodes(fieldNodesContext);
+
+                schemaNode.Fields.AddRange(fieldNodes);
+                contentNode.Schema = schemaNode;
+                deviceInterfaceFileNode.Contents.Add(contentNode);
             }
+
+            return deviceInterfaceFileNode;
         }
     }
 }

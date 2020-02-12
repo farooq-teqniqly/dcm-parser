@@ -62,20 +62,23 @@ namespace DcmParserLibTests.Properties {
         
         /// <summary>
         ///   Looks up a localized string similar to {
-        ///    &quot;@id&quot;: &quot;urn:marel:sensorx:machine:1&quot;,
-        ///    &quot;@type&quot;: &quot;Interface&quot;,
-        ///    &quot;displayName&quot;: &quot;Machine&quot;,
-        ///    &quot;contents&quot;: [{
-        ///            &quot;@type&quot;: &quot;Telemetry&quot;,
-        ///            &quot;name&quot;: &quot;telemetry&quot;,
-        ///            &quot;displayName&quot;: &quot;Telemetry&quot;,
-        ///            &quot;comment&quot;: &quot;[type=sensorx.telemetry,version=1]&quot;,
-        ///            &quot;schema&quot;: {
-        ///                &quot;@type&quot;: &quot;Object&quot;,
-        ///                &quot;fields&quot;: [{
-        ///                        &quot;name&quot;: &quot;dateTime&quot;,
-        ///                        &quot;displayName&quot;: &quot;Date time&quot;,
-        ///                        &quot;sc [rest of string was truncated]&quot;;.
+        ///   &quot;@id&quot;:&quot;urn:marel:sensorx:machine:1&quot;,
+        ///   &quot;@type&quot;:&quot;Interface&quot;,
+        ///   &quot;displayName&quot;:&quot;Machine&quot;,
+        ///   &quot;contents&quot;:[
+        ///      {
+        ///         &quot;@type&quot;:&quot;Telemetry&quot;,
+        ///         &quot;name&quot;:&quot;telemetry&quot;,
+        ///         &quot;displayName&quot;:&quot;Telemetry&quot;,
+        ///         &quot;comment&quot;:&quot;[type=sensorx.telemetry,version=1]&quot;,
+        ///         &quot;schema&quot;:{
+        ///            &quot;@type&quot;:&quot;Object&quot;,
+        ///            &quot;fields&quot;:[
+        ///               {
+        ///                  &quot;name&quot;:&quot;dateTime&quot;,
+        ///                  &quot;displayName&quot;:&quot;Date time&quot;,
+        ///                  &quot;schema&quot;:&quot;dateTime&quot;
+        ///                [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string DeviceInterfaceFileJson {
             get {

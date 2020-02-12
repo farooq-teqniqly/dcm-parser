@@ -22,7 +22,7 @@ namespace DcmParserLibTests
                 new SchemaNodeFactory(),
                 new FieldNodesFactory());
 
-            parser.Parse();
+            var fileNode = parser.Parse();
 
             // Assert
         }

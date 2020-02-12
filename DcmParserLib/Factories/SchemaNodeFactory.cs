@@ -23,11 +23,6 @@ namespace DcmParserLib.Factories
                 schemaNode = new ArraySchemaNode();
             }
 
-            if (string.Compare("Map", schemaType, StringComparison.InvariantCultureIgnoreCase) == 0)
-            {
-                schemaNode = new MapSchemaNode();
-            }
-
             return schemaNode;
         }
     }

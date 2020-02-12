@@ -45,10 +45,7 @@ namespace DcmParserLib.Factories
                         Schema = new SimpleSchemaNode {Name = (string) parserContext.Source["schema"]}
                     };
                 }
-                else
-                {
-                    throw new InvalidOperationException();
-                }
+                
             }
 
             contentNode.Name = (string) parserContext.Source["name"];
