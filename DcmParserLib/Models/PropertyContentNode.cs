@@ -2,7 +2,7 @@
 
 namespace DcmParserLib.Models
 {
-    public class TelemetryContentNode : ContentNode
+    public class PropertyContentNode : ContentNode
     {
         public override void Accept(INodeParser nodeParser)
         {

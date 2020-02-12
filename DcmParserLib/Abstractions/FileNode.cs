@@ -12,7 +12,6 @@ namespace DcmParserLib.Abstractions
         public string Id { get; set; }
         public string Name { get; set; }
 
-        public IEnumerable<ContentNode> ContentNodes { get; set; }
         public abstract void Accept(INodeParser nodeParser);
 
     }
