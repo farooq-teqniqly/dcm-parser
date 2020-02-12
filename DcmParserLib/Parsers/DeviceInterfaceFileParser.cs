@@ -9,15 +9,18 @@ namespace DcmParserLib.Parsers
         private readonly ParserContext context;
         private readonly IContentNodeFactory contentNodeFactory;
         private readonly ISchemaNodeFactory schemaNodeFactory;
+        private readonly IFieldNodesFactory fieldNodesFactory;
 
         public DeviceInterfaceFileParser(
             ParserContext context,
             IContentNodeFactory contentNodeFactory,
-            ISchemaNodeFactory schemaNodeFactory)
+            ISchemaNodeFactory schemaNodeFactory,
+            IFieldNodesFactory fieldNodesFactory)
         {
             this.context = context;
             this.contentNodeFactory = contentNodeFactory;
             this.schemaNodeFactory = schemaNodeFactory;
+            this.fieldNodesFactory = fieldNodesFactory;
         }
 
         public void Parse()
@@ -48,6 +51,16 @@ namespace DcmParserLib.Parsers
                 };
 
                 var schemaNode = schemaNodeFactory.CreateSchemaNode(schemaNodeContext);
+
+                // Parse schema fields
+                var fieldNodesContext = new ParserContext
+                {
+                    Source = JObject.FromObject(tokenContent["schema"])
+                };
+
+                fieldNodesContext.Data.Add("SchemaType", schemaNode.GetType());
+
+                var fieldNodes = fieldNodesFactory.CreateFieldNodes(fieldNodesContext);
             }
         }
     }
