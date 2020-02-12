@@ -1,94 +1,94 @@
 {
-    "@id": "urn:marel:chillLine:1",
-    "@type": "Interface",
-    "displayName": "Chill Line",
-    "contents": [
-        {
-            "@type": [
-                "Telemetry",
-                "SemanticType/Marel/Event"
-            ],
-            "name": "alarm",
-            "displayName": "Chill Line Alarm",
+  "@id": "urn:marel:chillLine:1",
+  "@type": "Interface",
+  "displayName": "Chill Line",
+  "contents": [
+    {
+      "@type": [
+        "Telemetry",
+        "SemanticType/Marel/Event"
+      ],
+      "name": "alarm",
+      "displayName": "Chill Line Alarm",
+      "schema": {
+        "@type": "Object",
+        "fields": [
+          {
+            "name": "dateTime",
+            "schema": "dateTime"
+          },
+          {
+            "name": "alarmLevel",
+            "schema": "string"
+          },
+          {
+            "name": "moduleDescription",
+            "schema": "string"
+          },
+          {
+            "name": "unitDecription",
+            "schema": "string"
+          },
+          {
+            "name": "deviceDescription",
+            "schema": "string"
+          },
+          {
+            "name": "description",
+            "schema": "string"
+          }
+        ]
+      }
+    },
+    {
+      "@type": "Telemetry",
+      "name": "atc_temperature",
+      "displayName": "Chill Line Temperature",
+      "schema": {
+        "@type": "Object",
+        "fields": [
+          {
+            "name": "dateTime",
+            "schema": "dateTime"
+          },
+          {
+            "name": "pluginId",
+            "schema": "integer"
+          },
+          {
+            "name": "sectionNumber",
+            "schema": "integer"
+          },
+          {
+            "name": "sectionSetpoint",
+            "schema": "integer"
+          },
+          {
+            "name": "sectionProcessValue",
+            "schema": "integer"
+          },
+          {
+            "name": "values",
             "schema": {
+              "@type": "Array",
+              "elementSchema": {
                 "@type": "Object",
                 "fields": [
-                    {
-                        "name": "dateTime",
-                        "schema": "dateTime"
-                    },
-                    {
-                        "name": "alarmLevel",
-                        "schema": "string"
-                    },
-                    {
-                        "name": "moduleDescription",
-                        "schema": "string"
-                    },
-                    {
-                        "name": "unitDecription",
-                        "schema": "string"
-                    },
-                    {
-                        "name": "deviceDescription",
-                        "schema": "string"
-                    },
-                    {
-                        "name": "description",
-                        "schema": "string"
-                    }
+                  {
+                    "name": "id",
+                    "schema": "integer"
+                  },
+                  {
+                    "name": "value",
+                    "schema": "double"
+                  }
                 ]
+              }
             }
-        },
-        {
-            "@type": "Telemetry",
-            "name": "atc_temperature",
-            "displayName": "Chill Line Temperature",
-            "schema": {
-                "@type": "Object",
-                "fields": [
-                    {
-                        "name": "dateTime",
-                        "schema": "dateTime"
-                    },
-                    {
-                        "name": "pluginId",
-                        "schema": "integer"
-                    },
-                    {
-                        "name": "sectionNumber",
-                        "schema": "integer"
-                    },
-                    {
-                        "name": "sectionSetpoint",
-                        "schema": "integer"
-                    },
-                    {
-                        "name": "sectionProcessValue",
-                        "schema": "integer"
-                    },
-                    {
-                        "name": "values",
-                        "schema": {
-                            "@type": "Array",
-                            "elementSchema": {
-                                "@type": "Object",
-                                "fields": [
-                                    {
-                                        "name": "id",
-                                        "schema": "integer"
-                                    },
-                                    {
-                                        "name": "value",
-                                        "schema": "double"
-                                    }
-                                ]
-                            }
-                        }
-                    }
-                ]
-            }
-        }
-    ],
-    "@context": "http://azureiot.com/v1/contexts/IoTModel.json"
+          }
+        ]
+      }
+    }
+  ],
+  "@context": "http://azureiot.com/v1/contexts/IoTModel.json"
 }

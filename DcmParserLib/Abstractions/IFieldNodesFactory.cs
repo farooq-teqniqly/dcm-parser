@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using DcmParserLib.Parsers;
 
 namespace DcmParserLib.Abstractions
 {

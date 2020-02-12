@@ -2,7 +2,6 @@
 using DcmParserLib.Abstractions;
 using DcmParserLib.Factories;
 using DcmParserLib.Models;
-using DcmParserLib.Parsers;
 using FluentAssertions;
 using Newtonsoft.Json.Linq;
 using Xunit;

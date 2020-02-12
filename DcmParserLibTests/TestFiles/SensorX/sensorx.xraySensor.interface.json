@@ -1,157 +1,157 @@
 {
-    "@id": "urn:marel:sensorx:xraySensor:1",
-    "@type": "Interface",
-    "displayName": "X-Ray Sensor",
-    "contents": [
-        {
-            "@type": ["Telemetry", "SemanticType/Temperature"],
-            "name": "actualTemperature",
-            "displayName": "Actual Temperature",
-            "displayUnit": "C",
-            "unit": "Units/Temperature/celsius",
+  "@id": "urn:marel:sensorx:xraySensor:1",
+  "@type": "Interface",
+  "displayName": "X-Ray Sensor",
+  "contents": [
+    {
+      "@type": ["Telemetry", "SemanticType/Temperature"],
+      "name": "actualTemperature",
+      "displayName": "Actual Temperature",
+      "displayUnit": "C",
+      "unit": "Units/Temperature/celsius",
+      "schema": "double"
+    },
+    {
+      "@type": "Telemetry",
+      "name": "coolingCurrent",
+      "displayName": "Cooling Current",
+      "displayUnit": "A",
+      "schema": {
+        "@type": "Object",
+        "fields": [
+          {
+            "name": "scaling",
+            "displayName": "Scaling",
             "schema": "double"
-        },
-        {
-            "@type": "Telemetry",
-            "name": "coolingCurrent",
-            "displayName": "Cooling Current",
-            "displayUnit": "A",
-            "schema": {
-                "@type": "Object",
-                "fields": [
-                    {
-                        "name": "scaling",
-                        "displayName": "Scaling",
-                        "schema": "double"
-                    },
-                    {
-                        "name": "value",
-                        "displayName": "Value",
-                        "schema": "double"
-                    }
-                ]
-            }
-        },
-        {
-            "@type": "Telemetry",
-            "name": "coolingEffort",
-            "displayName": "Cooling Effort",
-            "displayUnit": "%",
+          },
+          {
+            "name": "value",
+            "displayName": "Value",
             "schema": "double"
-        },
-        {
-            "@type": "Telemetry",
-            "name": "onTime",
-            "displayName": "On Time",
-            "displayUnit": "s",
-            "schema": "integer"
-        },
-        {
-            "@type": "Telemetry",
-            "name": "xrayTime",
-            "displayName": "X-Ray Time",
-            "displayUnit": "s",
-            "schema": "integer"
-        },
-        {
-            "@type": [
-                "Telemetry",
-                "SemanticType/Marel/Event"
-            ],
-            "name": "fileGenerated",
-            "displayName": "Sensor File Generated",
-            "schema": {
-                "@type": "Object",
-                "fields": [
-                    {
-                        "name": "fileName",
-                        "displayName": "File Name",
-                        "schema": "string"
-                    },
-                    {
-                        "name": "data",
-                        "displayName": "Data",
-                        "schema": "string"
-                    },
-                    {
-                        "name": "encoding",
-                        "displayName": "Encoding",
-                        "schema": "string"
-                    },
-                    {
-                        "name": "valueType",
-                        "schema": "string"
-                    }
-                ]
-            }
-        },
-        {
-            "@type": [
-                "Telemetry",
-                "SemanticType/Marel/Event"
-            ],
-            "name": "phantomValidationPerformed",
-            "displayName": "Phantom Validation Performed",
-            "schema": "dateTime"
-        },
-        {
-            "@type": [
-                "Telemetry",
-                "SemanticType/Marel/Event"
-            ],
-            "name": "phantomCalibrationPerformed",
-            "displayName": "Phantom Calibration Performed",
-            "schema": "dateTime"
-        },
-        {
-            "@type": [
-                "Telemetry",
-                "SemanticType/Marel/Event"
-            ],
-            "name": "gainCalibrationPerformed",
-            "displayName": "Gain Calibration Performed",
-            "schema": "dateTime"
-        },
-        {
-            "@type": [
-                "Telemetry",
-                "SemanticType/Marel/Event"
-            ],
-            "name": "registrationCalibrationPerformed",
-            "displayName": "Registration Calibration Performed",
-            "schema": "dateTime"
-        },
-        {
-            "@type": "Property",
-            "name": "setpointTemperature",
-            "displayName": "Setpoint Temperature",
-            "displayUnit": "C",
-            "unit": "Units/Temperature/celsius",
-            "schema": "double",
-            "writable": true
-        },
-        {
-            "@type": "Property",
-            "name": "usbFirmwareVersion",
-            "displayName": "USB Firmware Version",
-            "schema": "double"
-        },
-        {
-            "@type": "Property",
-            "displayName": "Serial Number",
-            "description": "Serial number for component.",
-            "name": "serialNumber",
-            "schema": "string",
-            "writable": false
-        },
-        {
-            "@type": "Property",
-            "displayName": "Placement",
-            "description": "Placement of component.",
-            "name": "placement",
-            "schema": "string",
-            "writable": false
-        }
-    ],
-    "@context": "http://azureiot.com/v1/contexts/IoTModel.json"
+          }
+        ]
+      }
+    },
+    {
+      "@type": "Telemetry",
+      "name": "coolingEffort",
+      "displayName": "Cooling Effort",
+      "displayUnit": "%",
+      "schema": "double"
+    },
+    {
+      "@type": "Telemetry",
+      "name": "onTime",
+      "displayName": "On Time",
+      "displayUnit": "s",
+      "schema": "integer"
+    },
+    {
+      "@type": "Telemetry",
+      "name": "xrayTime",
+      "displayName": "X-Ray Time",
+      "displayUnit": "s",
+      "schema": "integer"
+    },
+    {
+      "@type": [
+        "Telemetry",
+        "SemanticType/Marel/Event"
+      ],
+      "name": "fileGenerated",
+      "displayName": "Sensor File Generated",
+      "schema": {
+        "@type": "Object",
+        "fields": [
+          {
+            "name": "fileName",
+            "displayName": "File Name",
+            "schema": "string"
+          },
+          {
+            "name": "data",
+            "displayName": "Data",
+            "schema": "string"
+          },
+          {
+            "name": "encoding",
+            "displayName": "Encoding",
+            "schema": "string"
+          },
+          {
+            "name": "valueType",
+            "schema": "string"
+          }
+        ]
+      }
+    },
+    {
+      "@type": [
+        "Telemetry",
+        "SemanticType/Marel/Event"
+      ],
+      "name": "phantomValidationPerformed",
+      "displayName": "Phantom Validation Performed",
+      "schema": "dateTime"
+    },
+    {
+      "@type": [
+        "Telemetry",
+        "SemanticType/Marel/Event"
+      ],
+      "name": "phantomCalibrationPerformed",
+      "displayName": "Phantom Calibration Performed",
+      "schema": "dateTime"
+    },
+    {
+      "@type": [
+        "Telemetry",
+        "SemanticType/Marel/Event"
+      ],
+      "name": "gainCalibrationPerformed",
+      "displayName": "Gain Calibration Performed",
+      "schema": "dateTime"
+    },
+    {
+      "@type": [
+        "Telemetry",
+        "SemanticType/Marel/Event"
+      ],
+      "name": "registrationCalibrationPerformed",
+      "displayName": "Registration Calibration Performed",
+      "schema": "dateTime"
+    },
+    {
+      "@type": "Property",
+      "name": "setpointTemperature",
+      "displayName": "Setpoint Temperature",
+      "displayUnit": "C",
+      "unit": "Units/Temperature/celsius",
+      "schema": "double",
+      "writable": true
+    },
+    {
+      "@type": "Property",
+      "name": "usbFirmwareVersion",
+      "displayName": "USB Firmware Version",
+      "schema": "double"
+    },
+    {
+      "@type": "Property",
+      "displayName": "Serial Number",
+      "description": "Serial number for component.",
+      "name": "serialNumber",
+      "schema": "string",
+      "writable": false
+    },
+    {
+      "@type": "Property",
+      "displayName": "Placement",
+      "description": "Placement of component.",
+      "name": "placement",
+      "schema": "string",
+      "writable": false
+    }
+  ],
+  "@context": "http://azureiot.com/v1/contexts/IoTModel.json"
 }

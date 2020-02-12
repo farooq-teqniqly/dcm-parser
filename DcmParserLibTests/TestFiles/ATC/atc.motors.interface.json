@@ -1,45 +1,45 @@
 {
-    "@id": "urn:marel:motors:1",
-    "@type": "Interface",
-    "displayName": "Motor Controller",
-    "contents": [
-        {
-            "@type": "Telemetry",
-            "name": "atc_motor",
-            "displayName": "Motor",
+  "@id": "urn:marel:motors:1",
+  "@type": "Interface",
+  "displayName": "Motor Controller",
+  "contents": [
+    {
+      "@type": "Telemetry",
+      "name": "atc_motor",
+      "displayName": "Motor",
+      "schema": {
+        "@type": "Object",
+        "fields": [
+          {
+            "name": "dateTime",
+            "schema": "dateTime"
+          },
+          {
+            "name": "sections",
             "schema": {
+              "@type": "Array",
+              "elementSchema": {
                 "@type": "Object",
                 "fields": [
-                    {
-                        "name": "dateTime",
-                        "schema": "dateTime"
-                    },
-                    {
-                        "name": "sections",
-                        "schema": {
-                            "@type": "Array",
-                            "elementSchema": {
-                                "@type": "Object",
-                                "fields": [
-                                    {
-                                        "name": "id",
-                                        "schema": "integer"
-                                    },
-                                    {
-                                        "name": "inputFrequency",
-                                        "schema": "integer"
-                                    },
-                                    {
-                                        "name": "electricCurrent",
-                                        "schema": "integer"
-                                    }
-                                ]
-                            }
-                        }
-                    }
+                  {
+                    "name": "id",
+                    "schema": "integer"
+                  },
+                  {
+                    "name": "inputFrequency",
+                    "schema": "integer"
+                  },
+                  {
+                    "name": "electricCurrent",
+                    "schema": "integer"
+                  }
                 ]
+              }
             }
-        }
-    ],
-    "@context": "http://azureiot.com/v1/contexts/IoTModel.json"
+          }
+        ]
+      }
+    }
+  ],
+  "@context": "http://azureiot.com/v1/contexts/IoTModel.json"
 }

@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using DcmParserLib.Abstractions;
 using DcmParserLib.Models;
-using DcmParserLib.Parsers;
 using Newtonsoft.Json.Linq;
 
 namespace DcmParserLib.Factories

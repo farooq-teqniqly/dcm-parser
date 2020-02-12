@@ -1,8 +1,6 @@
-﻿using System.Linq;
-using DcmParserLib.Abstractions;
+﻿using DcmParserLib.Abstractions;
 using DcmParserLib.Factories;
 using DcmParserLib.Models;
-using DcmParserLib.Parsers;
 using FluentAssertions;
 using Newtonsoft.Json.Linq;
 using Xunit;
@@ -126,7 +124,7 @@ namespace DcmParserLibTests.Factories
             node.Name.Should().Be("plutoState");
             node.Comment.Should().Be("[type=sensorx.state,version=1]");
             node.Schema.Should().BeOfType<SimpleSchemaNode>();
-            ((SimpleSchemaNode)node.Schema).Name.Should().Be("integer");
+            ((SimpleSchemaNode) node.Schema).Name.Should().Be("integer");
         }
     }
 }

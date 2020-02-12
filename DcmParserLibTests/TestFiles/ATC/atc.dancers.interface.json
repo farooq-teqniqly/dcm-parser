@@ -1,78 +1,78 @@
 {
-    "@id": "urn:marel:dancers:1",
-    "@type": "Interface",
-    "displayName": "Dancer Controller",
-    "contents": [
-        {
-            "@type": "Telemetry",
-            "name": "atc_dancer",
-            "displayName": "atc.dancer",
+  "@id": "urn:marel:dancers:1",
+  "@type": "Interface",
+  "displayName": "Dancer Controller",
+  "contents": [
+    {
+      "@type": "Telemetry",
+      "name": "atc_dancer",
+      "displayName": "atc.dancer",
+      "schema": {
+        "@type": "Object",
+        "fields": [
+          {
+            "name": "dateTime",
+            "schema": "dateTime"
+          },
+          {
+            "name": "masterCorrectionLevel",
+            "schema": "integer"
+          },
+          {
+            "name": "masterOffsetLevel",
+            "schema": "integer"
+          },
+          {
+            "name": "sections",
             "schema": {
+              "@type": "Array",
+              "elementSchema": {
                 "@type": "Object",
                 "fields": [
-                    {
-                        "name": "dateTime",
-                        "schema": "dateTime"
-                    },
-                    {
-                        "name": "masterCorrectionLevel",
-                        "schema": "integer"
-                    },
-                    {
-                        "name": "masterOffsetLevel",
-                        "schema": "integer"
-                    },
-                    {
-                        "name": "sections",
-                        "schema": {
-                            "@type": "Array",
-                            "elementSchema": {
-                                "@type": "Object",
-                                "fields": [
-                                    {
-                                        "name": "id",
-                                        "schema": "integer"
-                                    },
-                                    {
-                                        "name": "position",
-                                        "schema": "integer"
-                                    },
-                                    {
-                                        "name": "bypassed",
-                                        "schema": "boolean"
-                                    }
-                                ]
-                            }
-                        }
-                    }
+                  {
+                    "name": "id",
+                    "schema": "integer"
+                  },
+                  {
+                    "name": "position",
+                    "schema": "integer"
+                  },
+                  {
+                    "name": "bypassed",
+                    "schema": "boolean"
+                  }
                 ]
+              }
             }
-        },
-        {
-            "@type": [
-                "Telemetry",
-                "SemanticType/Marel/State"
-            ],
-            "name": "atc_dancer_state",
-            "displayName": "atc.dancer.state",
-            "schema": {
-                "@type": "Object",
-                "fields": [
-                    {
-                        "name": "dateTime",
-                        "schema": "dateTime"
-                    },
-                    {
-                        "name": "id",
-                        "schema": "integer"
-                    },
-                    {
-                        "name": "inBypass",
-                        "schema": "boolean"
-                    }
-                ]
-            }
-        }
-    ],
-    "@context": "http://azureiot.com/v1/contexts/IoTModel.json"
+          }
+        ]
+      }
+    },
+    {
+      "@type": [
+        "Telemetry",
+        "SemanticType/Marel/State"
+      ],
+      "name": "atc_dancer_state",
+      "displayName": "atc.dancer.state",
+      "schema": {
+        "@type": "Object",
+        "fields": [
+          {
+            "name": "dateTime",
+            "schema": "dateTime"
+          },
+          {
+            "name": "id",
+            "schema": "integer"
+          },
+          {
+            "name": "inBypass",
+            "schema": "boolean"
+          }
+        ]
+      }
+    }
+  ],
+  "@context": "http://azureiot.com/v1/contexts/IoTModel.json"
 }

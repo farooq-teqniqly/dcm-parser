@@ -1,196 +1,196 @@
 {
-    "@id": "urn:marel:sensorx:xrayGenerator:1",
-    "@type": "Interface",
-    "displayName": "X-Ray Generator",
-    "contents": [
-        {
-            "@type": "Telemetry",
-            "name": "onTime",
-            "displayName": "On Time",
-            "displayUnit": "h",
-            "schema": "double"
-        },
-        {
-            "@type": ["Telemetry", "SemanticType/Temperature"],
-            "name": "temperature",
-            "displayName": "Temperature",
-            "displayUnit": "C",
-            "unit": "Units/Temperature/celsius",
-            "schema": "double"
-        },
-        {
-            "@type": "Telemetry",
-            "name": "tubeCurrent",
-            "displayName": "Tube Current",
-            "displayUnit": "A",
-            "schema": "double"
-        },
-        {
-            "@type": "Telemetry",
-            "name": "tubeVoltage",
-            "displayName": "Tube Voltage",
-            "displayUnit": "V",
-            "schema": "double"
-        },
-        {
-            "@type": [
-                "Telemetry",
-                "SemanticType/Marel/State"
-            ],
-            "name": "faultAnodeKV",
-            "displayName": "Fault Anode KV",
-            "schema": "boolean"
-        },
-        {
-            "@type": [
-                "Telemetry",
-                "SemanticType/Marel/State"
-            ],
-            "name": "faultArc",
-            "displayName": "Fault Arc",
-            "schema": "boolean"
-        },
-        {
-            "@type": [
-                "Telemetry",
-                "SemanticType/Marel/State"
-            ],
-            "name": "faultCathodeKV",
-            "displayName": "Fault Cathode KV",
-            "schema": "boolean"
-        },
-        {
-            "@type": [
-                "Telemetry",
-                "SemanticType/Marel/State"
-            ],
-            "name": "faultInterlockOpen",
-            "displayName": "Fault Interlock Open",
-            "schema": "boolean"
-        },
-        {
-            "@type": [
-                "Telemetry",
-                "SemanticType/Marel/State"
-            ],
-            "name": "faultOverCurrent",
-            "displayName": "Fault Over Current",
-            "schema": "boolean"
-        },
-        {
-            "@type": [
-                "Telemetry",
-                "SemanticType/Marel/State"
-            ],
-            "name": "faultOverTemperature",
-            "displayName": "Fault Over Temperature",
-            "schema": "boolean"
-        },
-        {
-            "@type": [
-                "Telemetry",
-                "SemanticType/Marel/State"
-            ],
-            "name": "faultOverVoltage",
-            "displayName": "Fault Over Voltage",
-            "schema": "boolean"
-        },
-        {
-            "@type": [
-                "Telemetry",
-                "SemanticType/Marel/State"
-            ],
-            "name": "faultPFC",
-            "displayName": "Fault PFC",
-            "schema": "boolean"
-        },
-        {
-            "@type": [
-                "Telemetry",
-                "SemanticType/Marel/State"
-            ],
-            "name": "faultPowerSupply",
-            "displayName": "Fault Power Supply",
-            "schema": "boolean"
-        },
-        {
-            "@type": [
-                "Telemetry",
-                "SemanticType/Marel/State"
-            ],
-            "name": "faultSerialConnection",
-            "displayName": "Fault Serial Connection",
-            "schema": "boolean"
-        },
-        {
-            "@type": [
-                "Telemetry",
-                "SemanticType/Marel/State"
-            ],
-            "name": "state",
-            "schema": {
-                "@type": "Enum",
-                "valueSchema": "integer",
-                "enumValues": [
-                    {
-                        "name": "xrayOFF",
-                        "displayName": "X-Ray OFF",
-                        "enumValue": 0
-                    },
-                    {
-                        "name": "warmUp",
-                        "displayName": "Warm-Up",
-                        "enumValue": 1
-                    },
-                    {
-                        "name": "startRampUp",
-                        "displayName": "Start Ramp-Up",
-                        "enumValue": 2
-                    },
-                    {
-                        "name": "rampUp",
-                        "displayName": "Ramp-Up",
-                        "enumValue": 3
-                    },
-                    {
-                        "name": "xrayON",
-                        "displayName": "X-Ray ON",
-                        "enumValue": 4
-                    },
-                    {
-                        "name": "rampDown",
-                        "displayName": "Ramp-down",
-                        "enumValue": 5
-                    },
-                    {
-                        "name": "fault",
-                        "displayName": "Fault",
-                        "enumValue": 6
-                    },
-                    {
-                        "name": "noComm",
-                        "displayName": "No Comm",
-                        "enumValue": 7
-                    }
-                ]
-            }
-        },
-        {
-            "@type": "Property",
-            "displayName": "Serial Number",
-            "description": "Serial number for component.",
-            "name": "serialNumber",
-            "schema": "string",
-            "writable": false
-        },
-        {
-            "@type": "Property",
-            "displayName": "Placement",
-            "description": "Placement of component.",
-            "name": "placement",
-            "schema": "string",
-            "writable": false
-        }
-    ],
-    "@context": "http://azureiot.com/v1/contexts/IoTModel.json"
+  "@id": "urn:marel:sensorx:xrayGenerator:1",
+  "@type": "Interface",
+  "displayName": "X-Ray Generator",
+  "contents": [
+    {
+      "@type": "Telemetry",
+      "name": "onTime",
+      "displayName": "On Time",
+      "displayUnit": "h",
+      "schema": "double"
+    },
+    {
+      "@type": ["Telemetry", "SemanticType/Temperature"],
+      "name": "temperature",
+      "displayName": "Temperature",
+      "displayUnit": "C",
+      "unit": "Units/Temperature/celsius",
+      "schema": "double"
+    },
+    {
+      "@type": "Telemetry",
+      "name": "tubeCurrent",
+      "displayName": "Tube Current",
+      "displayUnit": "A",
+      "schema": "double"
+    },
+    {
+      "@type": "Telemetry",
+      "name": "tubeVoltage",
+      "displayName": "Tube Voltage",
+      "displayUnit": "V",
+      "schema": "double"
+    },
+    {
+      "@type": [
+        "Telemetry",
+        "SemanticType/Marel/State"
+      ],
+      "name": "faultAnodeKV",
+      "displayName": "Fault Anode KV",
+      "schema": "boolean"
+    },
+    {
+      "@type": [
+        "Telemetry",
+        "SemanticType/Marel/State"
+      ],
+      "name": "faultArc",
+      "displayName": "Fault Arc",
+      "schema": "boolean"
+    },
+    {
+      "@type": [
+        "Telemetry",
+        "SemanticType/Marel/State"
+      ],
+      "name": "faultCathodeKV",
+      "displayName": "Fault Cathode KV",
+      "schema": "boolean"
+    },
+    {
+      "@type": [
+        "Telemetry",
+        "SemanticType/Marel/State"
+      ],
+      "name": "faultInterlockOpen",
+      "displayName": "Fault Interlock Open",
+      "schema": "boolean"
+    },
+    {
+      "@type": [
+        "Telemetry",
+        "SemanticType/Marel/State"
+      ],
+      "name": "faultOverCurrent",
+      "displayName": "Fault Over Current",
+      "schema": "boolean"
+    },
+    {
+      "@type": [
+        "Telemetry",
+        "SemanticType/Marel/State"
+      ],
+      "name": "faultOverTemperature",
+      "displayName": "Fault Over Temperature",
+      "schema": "boolean"
+    },
+    {
+      "@type": [
+        "Telemetry",
+        "SemanticType/Marel/State"
+      ],
+      "name": "faultOverVoltage",
+      "displayName": "Fault Over Voltage",
+      "schema": "boolean"
+    },
+    {
+      "@type": [
+        "Telemetry",
+        "SemanticType/Marel/State"
+      ],
+      "name": "faultPFC",
+      "displayName": "Fault PFC",
+      "schema": "boolean"
+    },
+    {
+      "@type": [
+        "Telemetry",
+        "SemanticType/Marel/State"
+      ],
+      "name": "faultPowerSupply",
+      "displayName": "Fault Power Supply",
+      "schema": "boolean"
+    },
+    {
+      "@type": [
+        "Telemetry",
+        "SemanticType/Marel/State"
+      ],
+      "name": "faultSerialConnection",
+      "displayName": "Fault Serial Connection",
+      "schema": "boolean"
+    },
+    {
+      "@type": [
+        "Telemetry",
+        "SemanticType/Marel/State"
+      ],
+      "name": "state",
+      "schema": {
+        "@type": "Enum",
+        "valueSchema": "integer",
+        "enumValues": [
+          {
+            "name": "xrayOFF",
+            "displayName": "X-Ray OFF",
+            "enumValue": 0
+          },
+          {
+            "name": "warmUp",
+            "displayName": "Warm-Up",
+            "enumValue": 1
+          },
+          {
+            "name": "startRampUp",
+            "displayName": "Start Ramp-Up",
+            "enumValue": 2
+          },
+          {
+            "name": "rampUp",
+            "displayName": "Ramp-Up",
+            "enumValue": 3
+          },
+          {
+            "name": "xrayON",
+            "displayName": "X-Ray ON",
+            "enumValue": 4
+          },
+          {
+            "name": "rampDown",
+            "displayName": "Ramp-down",
+            "enumValue": 5
+          },
+          {
+            "name": "fault",
+            "displayName": "Fault",
+            "enumValue": 6
+          },
+          {
+            "name": "noComm",
+            "displayName": "No Comm",
+            "enumValue": 7
+          }
+        ]
+      }
+    },
+    {
+      "@type": "Property",
+      "displayName": "Serial Number",
+      "description": "Serial number for component.",
+      "name": "serialNumber",
+      "schema": "string",
+      "writable": false
+    },
+    {
+      "@type": "Property",
+      "displayName": "Placement",
+      "description": "Placement of component.",
+      "name": "placement",
+      "schema": "string",
+      "writable": false
+    }
+  ],
+  "@context": "http://azureiot.com/v1/contexts/IoTModel.json"
 }

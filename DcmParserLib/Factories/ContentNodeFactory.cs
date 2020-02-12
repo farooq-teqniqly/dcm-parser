@@ -1,7 +1,6 @@
 ﻿using System;
 using DcmParserLib.Abstractions;
 using DcmParserLib.Models;
-using DcmParserLib.Parsers;
 using Newtonsoft.Json.Linq;
 
 namespace DcmParserLib.Factories
@@ -14,7 +13,7 @@ namespace DcmParserLib.Factories
 
             if (parserContext.Source["@type"] is JArray)
             {
-                var rootType = (string)parserContext.Source["@type"][0];
+                var rootType = (string) parserContext.Source["@type"][0];
                 var semanticType = (string) parserContext.Source["@type"][1];
 
                 if (string.Compare("SemanticType/Marel/Event", semanticType,
@@ -51,7 +50,6 @@ namespace DcmParserLib.Factories
                 {
                     contentNode = new PropertyContentNode();
                 }
-                
             }
 
             if (parserContext.Source["schema"]?.Type == JTokenType.String)

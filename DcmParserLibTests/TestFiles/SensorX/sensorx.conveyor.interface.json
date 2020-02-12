@@ -1,126 +1,126 @@
 {
-    "@id": "urn:marel:sensorx:conveyor:1",
-    "@type": "Interface",
-    "displayName": "Conveyor",
-    "contents": [
-        {
-            "@type": ["Telemetry", "SemanticType/Temperature"],
-            "name": "heatsinkTemperature",
-            "displayName": "Heatsink Temperature",
-            "displayUnit": "C",
-            "unit": "Units/Temperature/celsius",
+  "@id": "urn:marel:sensorx:conveyor:1",
+  "@type": "Interface",
+  "displayName": "Conveyor",
+  "contents": [
+    {
+      "@type": ["Telemetry", "SemanticType/Temperature"],
+      "name": "heatsinkTemperature",
+      "displayName": "Heatsink Temperature",
+      "displayUnit": "C",
+      "unit": "Units/Temperature/celsius",
+      "schema": "integer"
+    },
+    {
+      "@type": "Telemetry",
+      "name": "motorCurrent",
+      "displayName": "Motor Current",
+      "displayUnit": "A",
+      "schema": {
+        "@type": "Object",
+        "fields": [
+          {
+            "name": "scaling",
+            "displayName": "Scaling",
+            "schema": "double"
+          },
+          {
+            "name": "value",
+            "displayName": "Value",
             "schema": "integer"
-        },
-        {
-            "@type": "Telemetry",
-            "name": "motorCurrent",
-            "displayName": "Motor Current",
-            "displayUnit": "A",
-            "schema": {
-                "@type": "Object",
-                "fields": [
-                    {
-                        "name": "scaling",
-                        "displayName": "Scaling",
-                        "schema": "double"
-                    },
-                    {
-                        "name": "value",
-                        "displayName": "Value",
-                        "schema": "integer"
-                    }
-                ]
-            }
-        },
-        {
-            "@type": "Telemetry",
-            "name": "motorVoltage",
-            "displayName": "Motor Voltage",
-            "displayUnit": "V",
-            "schema": {
-                "@type": "Object",
-                "fields": [
-                    {
-                        "name": "scaling",
-                        "displayName": "Scaling",
-                        "schema": "double"
-                    },
-                    {
-                        "name": "value",
-                        "displayName": "Value",
-                        "schema": "integer"
-                    }
-                ]
-            }
-        },
-        {
-            "@type": "Telemetry",
-            "name": "supplyVoltage24V",
-            "displayName": "Supply Voltage 24",
-            "displayUnit": "V",
-            "schema": {
-                "@type": "Object",
-                "fields": [
-                    {
-                        "name": "scaling",
-                        "displayName": "Scaling",
-                        "schema": "double"
-                    },
-                    {
-                        "name": "value",
-                        "displayName": "Value",
-                        "schema": "integer"
-                    }
-                ]
-            }
-        },
-        {
-            "@type": "Telemetry",
-            "name": "thermalLoad",
-            "displayName": "Thermal Load",
-            "displayUnit": "%",
+          }
+        ]
+      }
+    },
+    {
+      "@type": "Telemetry",
+      "name": "motorVoltage",
+      "displayName": "Motor Voltage",
+      "displayUnit": "V",
+      "schema": {
+        "@type": "Object",
+        "fields": [
+          {
+            "name": "scaling",
+            "displayName": "Scaling",
+            "schema": "double"
+          },
+          {
+            "name": "value",
+            "displayName": "Value",
             "schema": "integer"
-        },
-        {
-            "@type": [
-                "Telemetry",
-                "SemanticType/Marel/State"
-            ],
-            "name": "state",
-            "displayName": "State",
-            "schema": {
-                "@type": "Enum",
-                "valueSchema": "integer",
-                "enumValues": [
-                    {
-                        "name": "stopped",
-                        "displayName": "Stopped",
-                        "enumValue": 0
-                    },
-                    {
-                        "name": "started",
-                        "displayName": "Started",
-                        "enumValue": 1
-                    }
-                ]
-            }
-        },
-        {
-            "@type": "Property",
-            "displayName": "Serial Number",
-            "description": "Serial number for component.",
-            "name": "serialNumber",
-            "schema": "string",
-            "writable": false
-        },
-        {
-            "@type": "Property",
-            "displayName": "Placement",
-            "description": "Placement of component.",
-            "name": "placement",
-            "schema": "string",
-            "writable": false
-        }
-    ],
-    "@context": "http://azureiot.com/v1/contexts/IoTModel.json"
+          }
+        ]
+      }
+    },
+    {
+      "@type": "Telemetry",
+      "name": "supplyVoltage24V",
+      "displayName": "Supply Voltage 24",
+      "displayUnit": "V",
+      "schema": {
+        "@type": "Object",
+        "fields": [
+          {
+            "name": "scaling",
+            "displayName": "Scaling",
+            "schema": "double"
+          },
+          {
+            "name": "value",
+            "displayName": "Value",
+            "schema": "integer"
+          }
+        ]
+      }
+    },
+    {
+      "@type": "Telemetry",
+      "name": "thermalLoad",
+      "displayName": "Thermal Load",
+      "displayUnit": "%",
+      "schema": "integer"
+    },
+    {
+      "@type": [
+        "Telemetry",
+        "SemanticType/Marel/State"
+      ],
+      "name": "state",
+      "displayName": "State",
+      "schema": {
+        "@type": "Enum",
+        "valueSchema": "integer",
+        "enumValues": [
+          {
+            "name": "stopped",
+            "displayName": "Stopped",
+            "enumValue": 0
+          },
+          {
+            "name": "started",
+            "displayName": "Started",
+            "enumValue": 1
+          }
+        ]
+      }
+    },
+    {
+      "@type": "Property",
+      "displayName": "Serial Number",
+      "description": "Serial number for component.",
+      "name": "serialNumber",
+      "schema": "string",
+      "writable": false
+    },
+    {
+      "@type": "Property",
+      "displayName": "Placement",
+      "description": "Placement of component.",
+      "name": "placement",
+      "schema": "string",
+      "writable": false
+    }
+  ],
+  "@context": "http://azureiot.com/v1/contexts/IoTModel.json"
 }

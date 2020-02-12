@@ -1,6 +1,4 @@
-﻿using DcmParserLib.Parsers;
-
-namespace DcmParserLib.Abstractions
+﻿namespace DcmParserLib.Abstractions
 {
     public interface IContentNodeFactory
     {

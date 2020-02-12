@@ -1,95 +1,95 @@
 {
-    "@id": "urn:marel:chainHealth:1",
-    "@type": "Interface",
-    "displayName": "Chain health",
-    "contents": [
-        {
-            "@type": "Telemetry",
-            "name": "atc_chain",
-            "displayName": "atc.chain",
-            "schema": {
-                "@type": "Array",
-                "elementSchema": {
-                    "@type": "Object",
-                    "fields": [
-                        {
-                            "name": "dateTime",
-                            "schema": "dateTime"
-                        },
-                        {
-                            "name": "shackle",
-                            "schema": "integer"
-                        },
-                        {
-                            "name": "section",
-                            "schema": "integer"
-                        },
-                        {
-                            "name": "inSection",
-                            "schema": "integer"
-                        },
-                        {
-                            "name": "pitch",
-                            "schema": "float"
-                        },
-                        {
-                            "name": "lineSpeed",
-                            "schema": "float"
-                        },
-                        {
-                            "name": "brokenWheelLeft",
-                            "schema": "boolean"
-                        },
-                        {
-                            "name": "brokenWheelRight",
-                            "schema": "boolean"
-                        },
-                        {
-                            "name": "missingTrolly",
-                            "schema": "boolean"
-                        },
-                        {
-                            "name": "cdtCalibrated",
-                            "schema": "boolean"
-                        }
-                    ]
-                }
+  "@id": "urn:marel:chainHealth:1",
+  "@type": "Interface",
+  "displayName": "Chain health",
+  "contents": [
+    {
+      "@type": "Telemetry",
+      "name": "atc_chain",
+      "displayName": "atc.chain",
+      "schema": {
+        "@type": "Array",
+        "elementSchema": {
+          "@type": "Object",
+          "fields": [
+            {
+              "name": "dateTime",
+              "schema": "dateTime"
+            },
+            {
+              "name": "shackle",
+              "schema": "integer"
+            },
+            {
+              "name": "section",
+              "schema": "integer"
+            },
+            {
+              "name": "inSection",
+              "schema": "integer"
+            },
+            {
+              "name": "pitch",
+              "schema": "float"
+            },
+            {
+              "name": "lineSpeed",
+              "schema": "float"
+            },
+            {
+              "name": "brokenWheelLeft",
+              "schema": "boolean"
+            },
+            {
+              "name": "brokenWheelRight",
+              "schema": "boolean"
+            },
+            {
+              "name": "missingTrolly",
+              "schema": "boolean"
+            },
+            {
+              "name": "cdtCalibrated",
+              "schema": "boolean"
             }
-        },
-        {
-            "@type": [
-                "Telemetry",
-                "SemanticType/Marel/State"
-            ],
-            "name": "cdtCalibrated",
-            "displayName": "CDT calibrated",
-            "schema": "boolean"
-        },
-        {
-            "@type": "Telemetry",
-            "name": "tensioners",
-            "displayName": "atc.tensioners",
-            "schema": {
-                "@type": "Array",
-                "elementSchema": {
-                    "@type": "Object",
-                    "fields": [
-                        {
-                            "name": "dateTime",
-                            "schema": "dateTime"
-                        },
-                        {
-                            "name": "manualPosition",
-                            "schema": "float"
-                        },
-                        {
-                            "name": "masterPosition",
-                            "schema": "float"
-                        }
-                    ]
-                }
-            }
+          ]
         }
-    ],
-    "@context": "http://azureiot.com/v1/contexts/IoTModel.json"
+      }
+    },
+    {
+      "@type": [
+        "Telemetry",
+        "SemanticType/Marel/State"
+      ],
+      "name": "cdtCalibrated",
+      "displayName": "CDT calibrated",
+      "schema": "boolean"
+    },
+    {
+      "@type": "Telemetry",
+      "name": "tensioners",
+      "displayName": "atc.tensioners",
+      "schema": {
+        "@type": "Array",
+        "elementSchema": {
+          "@type": "Object",
+          "fields": [
+            {
+              "name": "dateTime",
+              "schema": "dateTime"
+            },
+            {
+              "name": "manualPosition",
+              "schema": "float"
+            },
+            {
+              "name": "masterPosition",
+              "schema": "float"
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "@context": "http://azureiot.com/v1/contexts/IoTModel.json"
 }

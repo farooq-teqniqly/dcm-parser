@@ -1,7 +1,6 @@
 ﻿using System;
 using DcmParserLib.Abstractions;
 using DcmParserLib.Models;
-using DcmParserLib.Parsers;
 
 namespace DcmParserLib.Factories
 {
