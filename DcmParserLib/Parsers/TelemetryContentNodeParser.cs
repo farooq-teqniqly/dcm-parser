@@ -17,31 +17,46 @@ namespace DcmParserLib.Parsers
 
         public override void Parse(IParseable parseable)
         {
-            if (parseable is TelemetryContentNode node)
+            Context.ContentNodes.Add(new TelemetryContentNode
             {
-                var contents = Context.Source["contents"];
+                DisplayName = (string)Context.Source["displayName"],
+                Name = (string)Context.Source["name"],
+                Comment = (string)Context.Source["comment"]
+            });
+        }
+    }
 
-                foreach (var content in contents)
-                {
-                    if (content["@type"] is JArray)
-                    {
-                        continue;
-                    }
+    public class EventContentNodeParser : NodeParser
+    {
+        public EventContentNodeParser(ParserContext context) : base(context)
+        {
+        }
 
-                    if (string.Compare("Telemetry", (string) content["@type"],
-                            StringComparison.InvariantCultureIgnoreCase) != 0)
-                    {
-                        continue;
-                    }
+        public override void Parse(IParseable parseable)
+        {
+            Context.ContentNodes.Add(new EventContentNode
+            {
+                DisplayName = (string)Context.Source["displayName"],
+                Name = (string)Context.Source["name"],
+                Comment = (string)Context.Source["comment"]
+            });
+        }
+    }
 
-                    Context.ContentNodes.Add(new TelemetryContentNode
-                    {
-                        DisplayName = (string) content["displayName"],
-                        Name = (string) content["name"],
-                        Comment = (string) content["comment"]
-                    });
-                }
-            }
+    public class StateContentNodeParser : NodeParser
+    {
+        public StateContentNodeParser(ParserContext context) : base(context)
+        {
+        }
+
+        public override void Parse(IParseable parseable)
+        {
+            Context.ContentNodes.Add(new StateContentNode
+            {
+                DisplayName = (string)Context.Source["displayName"],
+                Name = (string)Context.Source["name"],
+                Comment = (string)Context.Source["comment"]
+            });
         }
     }
 }

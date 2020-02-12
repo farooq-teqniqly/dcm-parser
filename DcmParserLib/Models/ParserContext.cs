@@ -14,7 +14,7 @@ namespace DcmParserLib.Models
 
         public FileNode FileNode { get; set; }
 
-        public IList<ContentNode> ContentNodes { get; }
+        public List<ContentNode> ContentNodes { get; }
 
         public ParserContext()
         {

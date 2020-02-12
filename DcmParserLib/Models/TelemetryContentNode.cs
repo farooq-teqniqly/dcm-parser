@@ -9,4 +9,20 @@ namespace DcmParserLib.Models
             nodeParser.Parse(this);
         }
     }
+
+    public class EventContentNode : ContentNode
+    {
+        public override void Accept(INodeParser nodeParser)
+        {
+            nodeParser.Parse(this);
+        }
+    }
+
+    public class StateContentNode : ContentNode
+    {
+        public override void Accept(INodeParser nodeParser)
+        {
+            nodeParser.Parse(this);
+        }
+    }
 }

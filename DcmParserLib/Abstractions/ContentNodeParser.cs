@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DcmParserLib.Models;
+using DcmParserLib.Parsers;
 using Newtonsoft.Json.Linq;
 
 namespace DcmParserLib.Abstractions
@@ -27,10 +28,35 @@ namespace DcmParserLib.Abstractions
                 {
                     var type = (string) content["@type"][1];
 
-                    if (string.Compare("Event", type, StringComparison.InvariantCultureIgnoreCase) == 0)
+                    if (string.Compare("SemanticType/Event", type,
+                            StringComparison.InvariantCultureIgnoreCase) == 0)
                     {
-
+                        var childContext = new ParserContext { Source = JObject.FromObject(content) };
+                        var parser = new EventContentNodeParser(childContext);
+                        parser.Parse(new EventContentNode());
+                        this.context.ContentNodes.AddRange(childContext.ContentNodes);
+                        continue;
                     }
+
+                    if (string.Compare("SemanticType/State", type,
+                            StringComparison.InvariantCultureIgnoreCase) == 0)
+                    {
+                        var childContext = new ParserContext { Source = JObject.FromObject(content) };
+                        var parser = new StateContentNodeParser(childContext);
+                        parser.Parse(new StateContentNode());
+                        this.context.ContentNodes.AddRange(childContext.ContentNodes);
+                        continue;
+                    }
+                }
+
+                if (string.Compare("Telemetry", (string)content["@type"],
+                        StringComparison.InvariantCultureIgnoreCase) == 0)
+                {
+                    var childContext = new ParserContext {Source = JObject.FromObject(content)};
+                    var parser = new TelemetryContentNodeParser(childContext);
+                    parser.Parse(new TelemetryContentNode());
+                    this.context.ContentNodes.AddRange(childContext.ContentNodes);
+                    continue;
                 }
             }
         }
