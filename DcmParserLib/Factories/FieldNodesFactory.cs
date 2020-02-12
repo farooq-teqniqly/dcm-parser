@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using DcmParserLib.Abstractions;
 using DcmParserLib.Models;
 using DcmParserLib.Parsers;
@@ -24,10 +21,10 @@ namespace DcmParserLib.Factories
                     {
                         yield return new FieldNode
                         {
-                            Schema = new SimpleSchemaNode { Name = (string)fieldToken["schema"] },
-                            Name = (string)fieldToken["name"],
-                            DisplayName = (string)fieldToken["displayName"],
-                            DisplayUnit = (string)fieldToken["displayUnit"]
+                            Schema = new SimpleSchemaNode {Name = (string) fieldToken["schema"]},
+                            Name = (string) fieldToken["name"],
+                            DisplayName = (string) fieldToken["displayName"],
+                            DisplayUnit = (string) fieldToken["displayUnit"]
                         };
                     }
                 }
@@ -40,13 +37,12 @@ namespace DcmParserLib.Factories
                     {
                         yield return new FieldNode
                         {
-                            Schema = new SimpleSchemaNode { Name = (string)fieldToken["schema"] },
-                            Name = (string)fieldToken["name"]
+                            Schema = new SimpleSchemaNode {Name = (string) fieldToken["schema"]},
+                            Name = (string) fieldToken["name"]
                         };
                     }
                 }
             }
-
         }
     }
 }

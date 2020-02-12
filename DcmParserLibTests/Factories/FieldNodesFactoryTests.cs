@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Linq;
 using DcmParserLib.Factories;
 using DcmParserLib.Models;
 using DcmParserLib.Parsers;
@@ -57,9 +53,8 @@ namespace DcmParserLibTests.Factories
             temperatureField.DisplayName.Should().Be("Cabinet Temperature");
             temperatureField.DisplayUnit.Should().Be("C");
 
-            var temperatureFieldSchema = (SimpleSchemaNode)temperatureField.Schema;
+            var temperatureFieldSchema = (SimpleSchemaNode) temperatureField.Schema;
             temperatureFieldSchema.Name.Should().Be("double");
-
         }
 
         [Fact]
@@ -83,7 +78,7 @@ namespace DcmParserLibTests.Factories
                     }
                  }";
 
-            var context = new ParserContext { Source = JObject.Parse(json) };
+            var context = new ParserContext {Source = JObject.Parse(json)};
             context.Data.Add("SchemaType", typeof(ArraySchemaNode));
 
             var factory = new FieldNodesFactory();
@@ -99,7 +94,7 @@ namespace DcmParserLibTests.Factories
             packageField.DisplayName.Should().BeNullOrWhiteSpace();
             packageField.DisplayUnit.Should().BeNullOrWhiteSpace();
 
-            var packageFieldSchema = (SimpleSchemaNode)packageField.Schema;
+            var packageFieldSchema = (SimpleSchemaNode) packageField.Schema;
             packageFieldSchema.Name.Should().Be("string");
 
             var installedField = fieldNodes[1];
@@ -107,9 +102,8 @@ namespace DcmParserLibTests.Factories
             installedField.DisplayName.Should().BeNullOrWhiteSpace();
             installedField.DisplayUnit.Should().BeNullOrWhiteSpace();
 
-            var installedFieldSchema = (SimpleSchemaNode)installedField.Schema;
+            var installedFieldSchema = (SimpleSchemaNode) installedField.Schema;
             installedFieldSchema.Name.Should().Be("string");
-
         }
     }
 }

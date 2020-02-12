@@ -12,14 +12,14 @@ namespace DcmParserLibTests
         public void Can_Parse_File()
         {
             // Arrange
-            var context = new ParserContext { Source = JObject.Parse(Resources.DeviceInterfaceFileJson) };
+            var context = new ParserContext {Source = JObject.Parse(Resources.DeviceInterfaceFileJson)};
 
             // Act
 
             var parser = new DeviceInterfaceFileParser(
-                context, 
-                new ContentNodeFactory(), 
-                new SchemaNodeFactory(), 
+                context,
+                new ContentNodeFactory(),
+                new SchemaNodeFactory(),
                 new FieldNodesFactory());
 
             parser.Parse();
