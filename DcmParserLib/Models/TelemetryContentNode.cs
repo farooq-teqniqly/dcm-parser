@@ -25,4 +25,12 @@ namespace DcmParserLib.Models
             nodeParser.Parse(this);
         }
     }
+
+    public class PropertyContentNode : ContentNode
+    {
+        public override void Accept(INodeParser nodeParser)
+        {
+            nodeParser.Parse(this);
+        }
+    }
 }

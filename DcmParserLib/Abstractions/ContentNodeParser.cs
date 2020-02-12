@@ -26,9 +26,9 @@ namespace DcmParserLib.Abstractions
             {
                 if (content["@type"] is JArray)
                 {
-                    var type = (string) content["@type"][1];
+                    var semanticType = (string) content["@type"][1];
 
-                    if (string.Compare("SemanticType/Event", type,
+                    if (string.Compare("SemanticType/Event", semanticType,
                             StringComparison.InvariantCultureIgnoreCase) == 0)
                     {
                         var childContext = new ParserContext { Source = JObject.FromObject(content) };
@@ -38,7 +38,7 @@ namespace DcmParserLib.Abstractions
                         continue;
                     }
 
-                    if (string.Compare("SemanticType/State", type,
+                    if (string.Compare("SemanticType/State", semanticType,
                             StringComparison.InvariantCultureIgnoreCase) == 0)
                     {
                         var childContext = new ParserContext { Source = JObject.FromObject(content) };
@@ -49,12 +49,24 @@ namespace DcmParserLib.Abstractions
                     }
                 }
 
-                if (string.Compare("Telemetry", (string)content["@type"],
+                var type = (string)content["@type"];
+
+                if (string.Compare("Telemetry", type,
                         StringComparison.InvariantCultureIgnoreCase) == 0)
                 {
                     var childContext = new ParserContext {Source = JObject.FromObject(content)};
                     var parser = new TelemetryContentNodeParser(childContext);
                     parser.Parse(new TelemetryContentNode());
+                    this.context.ContentNodes.AddRange(childContext.ContentNodes);
+                    continue;
+                }
+
+                if (string.Compare("Property", type,
+                        StringComparison.InvariantCultureIgnoreCase) == 0)
+                {
+                    var childContext = new ParserContext { Source = JObject.FromObject(content) };
+                    var parser = new PropertyContentNodeParser(childContext);
+                    parser.Parse(new PropertyContentNode());
                     this.context.ContentNodes.AddRange(childContext.ContentNodes);
                     continue;
                 }

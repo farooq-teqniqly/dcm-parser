@@ -54,6 +54,9 @@ namespace DcmParserLibTests
 
             var stateContent = contents.OfType<StateContentNode>().ToList();
             stateContent.Count.Should().Be(2);
+
+            var propertyContent = contents.OfType<PropertyContentNode>().ToList();
+            propertyContent.Count.Should().Be(10);
         }
     }
 }
