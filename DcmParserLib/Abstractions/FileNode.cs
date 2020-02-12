@@ -1,10 +1,17 @@
-﻿namespace DcmParserLib.Abstractions
+﻿using System.Collections.Generic;
+
+namespace DcmParserLib.Abstractions
 {
-    public abstract class FileNode : IParseable
+    public abstract class FileNode
     {
         public string Id { get; set; }
-        public string Name { get; set; }
+        public string DisplayName { get; set; }
 
-        public abstract void Accept(INodeParser nodeParser);
+        public List<ContentNode> Contents { get; set; }
+
+        protected FileNode()
+        {
+            Contents = new List<ContentNode>();
+        }
     }
 }
